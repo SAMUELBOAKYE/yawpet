@@ -1,0 +1,151 @@
+.contact-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-hero h1 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.contact-hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.contact-form,
+.contact-info {
+  flex: 1 1 350px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form h2,
+.contact-info h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background-color: #f77f00;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #d96f00;
+}
+
+.contact-info .info-item {
+  margin-bottom: 20px;
+}
+
+.contact-info h4 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #f77f00;
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-box h2 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.5rem;
+  color: #2e7d32;
+}
+
+.modal-box button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-box button:hover {
+  background: #0056b3;
+}
+/* Detects dark mode (via body.dark or prefers-color-scheme) */
+body.dark .modal-box,
+@media (prefers-color-scheme: dark) {
+  .modal-box {
+    background: #1e1e1e;
+    color: #f1f1f1;
+  }
+
+  .modal-box button {
+    background: #1f88ff;
+  }
+
+  .modal-box button:hover {
+    background: #1564c0;
+  }
+}

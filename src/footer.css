@@ -1,0 +1,115 @@
+.world-footer {
+  background-color: #0b0b0b;
+  color: #eaeaea;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 20px 30px;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.brand h2 {
+  color: #ffd700;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.brand p {
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-section h4 {
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #aaa;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons a.whatsapp:hover {
+  color: #25d366;
+}
+
+.social-icons a.facebook:hover {
+  color: #3b5998;
+}
+
+.social-icons a.instagram:hover {
+  color: #e1306c;
+}
+
+.social-icons a.twitter:hover {
+  color: #1da1f2;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+}
+
+/* Mobile Styling */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}

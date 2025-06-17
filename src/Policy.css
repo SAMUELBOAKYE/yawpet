@@ -1,0 +1,90 @@
+.policy-page {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px 24px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+.policy-page h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111827;
+  border-left: 6px solid #ffd700;
+  padding-left: 12px;
+}
+
+.policy-page p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.policy-page ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.policy-page ul li {
+  background-color: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 5px solid #ffd700;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.policy-page a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.policy-page a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .policy-page {
+    padding: 24px 16px;
+    margin: 40px 16px;
+  }
+
+  .policy-page h1 {
+    font-size: 28px;
+  }
+
+  .policy-page p,
+  .policy-page ul li {
+    font-size: 15px;
+  }
+}
+.back-button {
+  margin-top: 30px;
+  background-color: #ffd700;
+  color: #111;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #f0c300;
+}

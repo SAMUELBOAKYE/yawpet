@@ -1,0 +1,195 @@
+/* === ✅ PRODUCT CARD POLISH STYLES FOR SHOP PAGE === */
+.product-card {
+  overflow: hidden;
+  position: relative;
+  border-radius: 18px;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* base shadow off */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* Keeps consistent shape */
+  object-fit: contain; /* 👈 Prevents face cropping */
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background-color: #f2f2f2; /* Optional: frame images with padding */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === ✅ RESPONSIVE IMAGE FIX FOR MOBILE === */
+@media (max-width: 600px) {
+  .product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background-color: #f2f2f2;
+  }
+}
+
+/* === ✅ AUTH PAGES STYLES === */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #f8f9fa, #dfe9f3);
+  animation: fadeIn 1s ease-in;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 20px;
+  z-index: 1;
+}
+
+.auth-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: red;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease-in;
+}
+
+.auth-container form {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 400px;
+  animation: popIn 0.5s ease-in-out;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  transition: border 0.3s ease;
+  font-size: 1rem;
+}
+
+.auth-container input:focus {
+  border-color: #65c20e;
+  outline: none;
+  margin-top: 50px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #0056d1;
+}
+
+.auth-container p {
+  margin-top: 1rem;
+  color: black;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: black;
+  font-size: 1rem;
+}
+
+.auth-container a {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.google-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: bold;
+  color: #999;
+}
+
+.toggle-show {
+  margin-top: 20px;
+}

@@ -1,0 +1,66 @@
+/* PetDetail.css */
+.pet-detail {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-detail-image {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.pet-detail-info {
+  background-color: #fff;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.pet-detail-info h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.pet-detail-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.back-button {
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.pet-source-note {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #888;
+}
+
+.pet-detail-error {
+  padding: 2rem;
+  text-align: center;
+  color: red;
+}

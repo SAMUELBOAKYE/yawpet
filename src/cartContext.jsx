@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Create context
 const CartContext = createContext();
 
-// Provider component
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
     try {
@@ -15,17 +13,12 @@ export const CartProvider = ({ children }) => {
     }
   });
 
-  // Persist cart to localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  /**
-   * Add a pet to the cart.
-   * If already in cart, increases quantity.
-   */
   const addToCart = (item) => {
-    if (!item?.id || item.price <= 0) return; // 🚨 Prevent invalid entries
+    if (!item?.id || item.price <= 0) return;
 
     setCart((prevCart) => {
       const existingItem = prevCart[item.id];
@@ -53,9 +46,6 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  /**
-   * Remove an item completely from the cart
-   */
   const removeFromCart = (id) => {
     setCart((prevCart) => {
       const updated = { ...prevCart };
@@ -64,10 +54,6 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  /**
-   * Update quantity of an item by delta (+1, -1)
-   * Removes item if quantity reaches zero or below
-   */
   const updateQuantity = (id, delta) => {
     setCart((prevCart) => {
       const item = prevCart[id];
@@ -90,14 +76,8 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  /**
-   * Clear entire cart
-   */
   const clearCart = () => setCart({});
 
-  /**
-   * Get total price of items in cart
-   */
   const getTotalPrice = () => {
     return Object.values(cart).reduce(
       (sum, item) => sum + item.price * item.quantity,
@@ -113,7 +93,7 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         updateQuantity,
         clearCart,
-        getTotalPrice, // ✅ included
+        getTotalPrice,
       }}
     >
       {children}
@@ -121,5 +101,4 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use cart
 export const useCart = () => useContext(CartContext);

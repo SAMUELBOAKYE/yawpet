@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
    * If already in cart, increases quantity.
    */
   const addToCart = (item) => {
-    if (!item?.id) return;
+    if (!item?.id || item.price <= 0) return; // 🚨 Prevent invalid entries
 
     setCart((prevCart) => {
       const existingItem = prevCart[item.id];
@@ -95,6 +95,16 @@ export const CartProvider = ({ children }) => {
    */
   const clearCart = () => setCart({});
 
+  /**
+   * Get total price of items in cart
+   */
+  const getTotalPrice = () => {
+    return Object.values(cart).reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -103,6 +113,7 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         updateQuantity,
         clearCart,
+        getTotalPrice, // ✅ included
       }}
     >
       {children}

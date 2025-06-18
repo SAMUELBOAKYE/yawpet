@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Brand Section */}
         <div className="footer-section brand">
-          <h2>🐾 PetPal</h2>
+          <h2>🐾 TESLA'S PET</h2>
           <p>Adopt. Shop. Love. Connecting pets with families worldwide.</p>
         </div>
 
@@ -87,7 +87,9 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} PetPal. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} BoakyeSamuel. All rights reserved.
+        </p>
       </div>
     </footer>
   );

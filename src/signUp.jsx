@@ -1,15 +1,12 @@
-// All imports unchanged
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
 import { toast } from "react-toastify";
 import { useAuth } from "./AuthContext";
 import "./signup.css";
 
 function SignUp() {
   const navigate = useNavigate();
-  const { signup, login } = useAuth();
+  const { signup } = useAuth();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -56,7 +53,6 @@ function SignUp() {
         email: formData.email,
       };
 
-      // Save to localStorage
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
       localStorage.setItem("auth", "true");
       localStorage.setItem(
@@ -64,28 +60,23 @@ function SignUp() {
         JSON.stringify({ email: formData.email })
       );
 
-      // ✅ Send email via Web3Forms
+      // Send email notification
       try {
-        const res = await fetch("https://api.web3forms.com/submit", {
+        await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            access_key: "e2158152-919f-402f-8674-9aa76afdc614", // 🔑 Replace this
+            access_key: "e2158152-919f-402f-8674-9aa76afdc614",
             subject: "📥 New Signup Notification",
             name: formData.name,
             email: formData.email,
-            message: `A new user just signed up:\nName: ${formData.name}\nEmail: ${formData.email}`,
+            message: `New user signup:\nName: ${formData.name}\nEmail: ${formData.email}`,
           }),
         });
-
-        if (!res.ok) {
-          console.warn("Web3Forms email failed.");
-        }
       } catch (err) {
-        console.error("Web3Forms error:", err);
+        console.warn("Web3Forms email failed:", err);
       }
 
-      // Reset faorm and notify
       setFormData({
         name: "",
         email: "",
@@ -99,35 +90,6 @@ function SignUp() {
       toast.success("🎉 Signup successful!", { position: "top-center" });
       navigate("/");
     }, 1000);
-  };
-
-  const handleGoogleSuccess = (credentialResponse) => {
-    try {
-      const decoded = jwtDecode(credentialResponse.credential);
-      const user = {
-        name: decoded.name,
-        email: decoded.email,
-      };
-
-      const users = JSON.parse(localStorage.getItem("users")) || {};
-      users[user.email] = { email: user.email, password: "google" };
-      localStorage.setItem("users", JSON.stringify(users));
-
-      localStorage.setItem(
-        "currentUser",
-        JSON.stringify({ email: user.email })
-      );
-      localStorage.setItem("userInfo", JSON.stringify(user));
-      localStorage.setItem("auth", "true");
-
-      login(user.email, "google");
-
-      toast.success("🎉 Google signup successful!", { position: "top-center" });
-      navigate("/");
-    } catch (err) {
-      console.error("Google decode error:", err);
-      toast.error("❌ Failed to authenticate with Google.");
-    }
   };
 
   return (
@@ -198,19 +160,6 @@ function SignUp() {
         <p>
           Already have an account? <Link to="/login">Log in</Link>
         </p>
-
-        <div className="or-divider">OR</div>
-
-        <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-          <GoogleLogin
-            onSuccess={handleGoogleSuccess}
-            onError={() =>
-              toast.error("❌ Google Login Failed", {
-                position: "top-center",
-              })
-            }
-          />
-        </GoogleOAuthProvider>
       </form>
     </div>
   );

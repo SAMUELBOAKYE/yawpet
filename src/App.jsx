@@ -2,17 +2,17 @@ import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Home from "./Home";
 import AdoptionPage from "./AdoptionPage";
-import SignUp from "./signUp";
-import Login from "./login"; // ✅ Confirm your file is named login.jsx
+import SignUp from "./signUp"; // ✅ lowercase file
+import Login from "./login"; // ✅ lowercase file
 import Header from "./Header";
 import Shop from "./Shop";
 import CheckoutWrapper from "./CheckoutWrapper";
-import PaymentRouter from "./PaymentRouter";
-import SellForm from "./sell";
+import PaymentRouter from "./paymentRouter"; // ✅ lowercase file
+import SellForm from "./sell"; // ✅ lowercase file
 import PetDetails from "./PetDetails";
 import Footer from "./Footer";
 import Contact from "./Contact";
-import PrivacyPolicy from "./PrivacyPolicy";
+import PrivacyPolicy from "./privacyPolicy"; // ✅ lowercase file
 import TermsOfService from "./TermOfService";
 import SuccessPage from "./SuccessPage";
 import { ToastContainer } from "react-toastify";

@@ -10,7 +10,7 @@ import CheckoutWrapper from "./CheckoutWrapper";
 import PaymentRouter from "./paymentRouter"; // ✅ lowercase file
 import SellForm from "./sell"; // ✅ lowercase file
 import PetDetails from "./PetDetails";
-import Footer from "./Footer";
+import Footer from "./footer";
 import Contact from "./Contact";
 import PrivacyPolicy from "./privacyPolicy"; // ✅ lowercase file
 import TermsOfService from "./TermOfService";

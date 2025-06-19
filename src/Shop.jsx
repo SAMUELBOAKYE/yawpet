@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-toastify";
-import { useCart } from "./CartContext";
+import { useCart } from "./cartContext";
 import Checkout from "./Checkout";
 import catA from "./assets/ussian Blue.jpg";
 import catB from "./assets/Scottish Fold.jpg";

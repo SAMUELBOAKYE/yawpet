@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./contact.css";
+import "./Contact.css";
 import { toast } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle } from "lucide-react";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SellForm.css";
+import "./sellForm.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 

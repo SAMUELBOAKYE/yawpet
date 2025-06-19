@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AdoptionPage.css";
-import { useCart } from "./CartContext";
+import { useCart } from "./cartContext";
 
 // ✅ Pet images
 import myCat from "./assets/British Shorthair.jpg";

@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Home from "./Home";
 import AdoptionPage from "./AdoptionPage";
 import SignUp from "./SignUp";
-import Login from "./Login";
+import Login from "./login"; // ✅ Confirm your file is named login.jsx
 import Header from "./Header";
 import Shop from "./Shop";
 import CheckoutWrapper from "./CheckoutWrapper";

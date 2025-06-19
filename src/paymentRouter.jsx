@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import PayPalPayment from "./PayPalPayment";
-import StripePayment from "./StripePayment";
-import RazorpayPayment from "./RazorpayPayment";
+import PayPalPayment from "./payPalPayment";
+import StripePayment from "./stripePayment";
+import RazorpayPayment from "./razorpayPayment";
 
 const PaymentRouter = () => {
   const { method } = useParams();

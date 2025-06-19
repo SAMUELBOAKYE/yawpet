@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Policy.css";
+import "./policy.css";
 
 const TermsOfService = () => {
   const navigate = useNavigate();

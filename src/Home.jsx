@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
-import "./home.css";
+import "./Home.css";
 import dogBackground from "./assets/dog-background.mp4";
 
 function Home() {

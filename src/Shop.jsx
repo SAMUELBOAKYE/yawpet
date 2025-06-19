@@ -13,7 +13,7 @@ import dogA from "./assets/Boxer.jpg";
 import dogB from "./assets/Chihuahua.jpg";
 import dogC from "./assets/Siberian Husky.jpg";
 import dogD from "./assets/Yorkshire Terrier.jpg";
-import "./shop.css";
+import "./Shop.css";
 
 // Mock product data
 const mockProducts = [

@@ -1,7 +1,7 @@
 // PetDetail.jsx
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./petDetail.css";
+import "./PetDetail.css";
 
 const PetDetail = () => {
   const navigate = useNavigate();

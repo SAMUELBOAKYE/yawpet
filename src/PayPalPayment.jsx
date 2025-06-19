@@ -8,14 +8,16 @@ function PayPalPayment({ amount = 49.99 }) {
 
   if (!clientID) {
     return (
-      <p style={{ color: "red" }}>❌ PayPal Client ID not found in .env file</p>
+      <p style={{ color: "red" }}>
+        ❌ PayPal Client ID not found. Please check your .env file.
+      </p>
     );
   }
 
   return (
     <PayPalScriptProvider options={{ "client-id": clientID }}>
       <div style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto" }}>
-        <h2>Pay with PayPal</h2>
+        <h2 style={{ marginBottom: "1rem" }}>Pay with PayPal</h2>
         <PayPalButtons
           style={{
             layout: "vertical",
@@ -23,25 +25,21 @@ function PayPalPayment({ amount = 49.99 }) {
             color: "blue",
             label: "paypal",
           }}
-          createOrder={(data, actions) => {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  amount: { value: amount.toFixed(2) },
-                },
-              ],
-            });
-          }}
-          onApprove={(data, actions) => {
-            return actions.order.capture().then((details) => {
+          createOrder={(data, actions) =>
+            actions.order.create({
+              purchase_units: [{ amount: { value: amount.toFixed(2) } }],
+            })
+          }
+          onApprove={(data, actions) =>
+            actions.order.capture().then((details) => {
               alert(
                 `✅ Transaction completed by ${details.payer.name.given_name}`
               );
-            });
-          }}
+            })
+          }
           onError={(err) => {
             console.error("❌ PayPal Error:", err);
-            alert("Payment failed. Please try again.");
+            alert("❌ Payment failed. Please try again.");
           }}
         />
       </div>

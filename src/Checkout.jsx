@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./checkout.css";
-import PaymentStep from "./PaymentStep";
+import PaymentStep from "./paymentStep";
 
 function Checkout({ cartItems, totalPrice, onPlaceOrder }) {
   const [form, setForm] = useState({

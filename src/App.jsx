@@ -8,7 +8,7 @@ import Header from "./Header";
 import Shop from "./Shop";
 import CheckoutWrapper from "./CheckoutWrapper";
 import PaymentRouter from "./PaymentRouter";
-import SellForm from "./Sell";
+import SellForm from "./sell";
 import PetDetails from "./PetDetails";
 import Footer from "./Footer";
 import Contact from "./Contact";

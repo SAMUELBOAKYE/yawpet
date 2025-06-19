@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./adoptionPage.css";
+import "./AdoptionPage.css";
 import { useCart } from "./CartContext";
 
 // ✅ Pet images
